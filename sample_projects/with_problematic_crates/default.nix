@@ -8,7 +8,7 @@ let
       pest_generator = attrs: {
         buildInputs =
           (attrs.buildInputs or [ ])
-            ++ stdenv.lib.optionals
+            ++ pkgs.lib.optionals
             stdenv.isDarwin
             (with pkgs.darwin.apple_sdk.frameworks; [ Security ]);
       };
@@ -16,7 +16,7 @@ let
       cssparser-macros = attrs: {
         buildInputs =
           (attrs.buildInputs or [ ])
-            ++ stdenv.lib.optionals
+            ++ pkgs.lib.optionals
             stdenv.isDarwin
             (with pkgs.darwin.apple_sdk.frameworks; [ Security ]);
       };
